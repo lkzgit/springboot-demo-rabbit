@@ -7,6 +7,10 @@ import com.rabbitmq.client.Connection;
 
 /**
  * 通配符Topic的交换机类型为：topic
+ * 试用不同的功能模块接收不同的消息模块
+ * 例如：商城下单，通过routing.key 下单成功 物流监听消息 key.*，发票监听消息 key.*
+ *
+ * 可以指定队列名称，也可以试用随机的一个队列 ，如果应用订单，建议试用指定队列 ，并且指定持久化
  */
 public class Producer {
 

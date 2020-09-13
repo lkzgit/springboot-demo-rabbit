@@ -23,6 +23,15 @@ public class Consumer1 {
          * 参数3：是否独占本次连接
          * 参数4：是否在不使用的时候自动删除队列
          * 参数5：队列其它参数
+         *
+         * 没有参数的queueDeclare方法会创建一个名字为随机的一个队列
+         * 这个队列的数据是非持久化的
+         * 是排外的（同时最多只允许一个消费者监听当前队列）
+         * 自动删除的 当没有任何的消费者监听队列时这个队列就会自动删除
+         * getQueue() 方法用户获取这个随机的队列名
+         *
+         * String  queueName =channel.queueDeclare().getQueue();
+         *
          */
         channel.queueDeclare(Produce.FANOUT_QUEUE_1, true, false, false, null);
 
